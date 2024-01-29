@@ -1,0 +1,65 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
+
+body {
+  background-color: #ffde00; /* Disimular rotación */
+}
+
+#ray {
+  background: url('assets/rayo.webp') no-repeat;
+  width: 550px;
+  height: 550px;
+  animation: circular 10s linear infinite;
+
+  @media (width <= 1111px) {
+    zoom: 0.7;
+  }
+}
+
+img {
+  aspect-ratio: 1;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+
+  @media (width <= 1111px) {
+    zoom: 0.8;
+  }
+}
+
+@keyframes circular {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
